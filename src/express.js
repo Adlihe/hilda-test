@@ -2,6 +2,7 @@ import express from 'express'
 import logger from 'morgan'
 import path from 'path'
 import { router } from './route.js'
+import { router as api } from './route/api.js'
 
 export const app = express()
 
@@ -17,6 +18,7 @@ app.set('views', path.join('src', 'views'))
 
 // Add the router
 app.use('/', router)
+app.use('/api', api)
 
 // Error handler for 404
 app.use((req, res, next) => {
