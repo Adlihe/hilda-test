@@ -4,7 +4,7 @@ export const router = express.Router()
 
 // Hello world route
 router.get('/', (req, res) => {
-  res.send('Hello World! AGAIN SAYS MUMINTROLLET')
+    res.send('Hello World! AGAIN SAYS MUMINTROLLET')
 })
 
 // JSON Hello World!
@@ -18,14 +18,14 @@ router.get('/api/hello', (req, res) => {
 
 // A route throwing exceptions
 router.get('/api/error', (req, res) => {
-  throw new Error('This is a forced error for demonstration purposes')  
+    throw new Error('This is a forced error for demonstration purposes')  
 })
 
 // A route being forbidden, using exceptions to show it
 router.get('/api/forbidden', (req, res, next) => {
-  const err = new Error('You are not allowed to access this resource')
-  err.status = 403
-  throw err
+    const err = new Error('You are not allowed to access this resource')
+    err.status = 403
+    throw err
 })
 
 // A route rendering a page using EJS template/view engine
